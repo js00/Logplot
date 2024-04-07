@@ -1,0 +1,34 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+#Range
+x_values = np.linspace(0.01, 2, 400)
+
+#Functions
+def func1(x):
+    return -np.log(x)
+
+def func2(x):
+    return -np.log(1 - x)
+
+#Plot
+plt.figure(figsize=(10, 6))
+
+#First function
+plt.plot(x_values, func1(x_values), label=r'$-\log(f(x))$', color='blue')
+
+#Second function
+plt.plot(x_values, func2(x_values), label=r'$-\log(1 - f(x))$', color='red')
+
+#Lines that shows x=0 i x=1
+plt.axvline(x=0, color='black', linestyle='--', linewidth=0.8)
+plt.axvline(x=1, color='black', linestyle='--', linewidth=0.8)
+
+#Axis describe
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Function plot of $-\log(f(x))$ i $-\log(1 - f(x))$')
+plt.legend()
+plt.grid(True)
+plt.ylim(-2, 5)  #Set range of axis Y
+plt.show()
